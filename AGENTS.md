@@ -56,18 +56,18 @@ Jika perubahan CSS atau gambar belum terlihat, lakukan hard refresh di browser d
 
 ## Fitur Saat Ini
 
-- Navbar berisi logo teks "Voolatte" dan pilihan mode bahasa "ID" / "EN".
+- Navbar berisi logo teks "Voolatte" dan pilihan mode bahasa "ID" / "EN" / "中文".
 - Mode bahasa tersimpan di `localStorage`, sehingga pilihan terakhir tetap dipakai saat website dibuka lagi.
 - Atribut `lang`, title halaman, aria label, alt gambar, dan teks tampilan ikut berubah sesuai bahasa aktif.
 - Hero section dengan judul "Voolatte".
-- Deskripsi Voolatte tersedia dalam Bahasa Indonesia dan English.
-- Tombol hero "Lihat Koleksi" / "View Collection" mengarah ke bagian koleksi.
+- Deskripsi Voolatte tersedia dalam Bahasa Indonesia, English, dan Mandarin.
+- Tombol hero "Lihat Koleksi" / "View Collection" / "查看收藏" mengarah ke bagian koleksi.
 - Sisi kanan hero menampilkan 3 gambar karakter squishy dari `images/squishy-a.png`, `images/squishy-b.png`, dan `images/squishy-c.png`.
-- Bagian koleksi memiliki judul "Koleksi Voolatte" / "Voolatte Collection".
+- Bagian koleksi memiliki judul "Koleksi Voolatte" / "Voolatte Collection" / "Voolatte 收藏".
 - Bagian heading koleksi memiliki fitur search di sebelah kanan pada desktop.
 - Placeholder search adalah "Cari squishy..." / "Search squishy...".
 - Search memfilter kartu berdasarkan nama squishy.
-- Jika hasil search kosong, teks yang muncul adalah "Squishy tidak ditemukan." / "Squishy not found.".
+- Jika hasil search kosong, teks yang muncul adalah "Squishy tidak ditemukan." / "Squishy not found." / "没有找到 Squishy。".
 - Galeri berisi kartu squishy dari Squishy A sampai Squishy Z.
 - Gambar squishy berada di folder `images`.
 - Squishy A, B, dan C memakai gambar asli dari folder `images`.
@@ -80,7 +80,7 @@ Jika perubahan CSS atau gambar belum terlihat, lakukan hard refresh di browser d
 - Setiap kartu koleksi bisa diklik.
 - Setelah kartu diklik, detail squishy muncul sebagai popup modal tanpa mengubah layout daftar koleksi.
 - Popup detail bisa ditutup dengan tombol "Kembali ke Koleksi" di pojok kanan atas kartu popup atau dengan mengklik area overlay.
-- Deskripsi detail squishy tersedia dalam Bahasa Indonesia dan English.
+- Deskripsi detail squishy tersedia dalam Bahasa Indonesia, English, dan Mandarin.
 - Teks "Detail Squishy" sudah dihapus dari kartu detail.
 - Tombol "Kembali ke Koleksi" / "Back to Collection" ditampilkan di pojok kanan atas popup detail.
 - Footer hanya menampilkan "Voolatte" dan kontak WhatsApp.
@@ -107,7 +107,7 @@ Jika perubahan CSS atau gambar belum terlihat, lakukan hard refresh di browser d
 
 - `index.html`: struktur halaman, hero, koleksi, detail squishy, footer, link WhatsApp, dan tombol mode bahasa.
 - `style.css`: background, overlay, glassmorphism, responsif mobile, kartu koleksi, detail squishy, tombol mode bahasa, footer, dan kontak WhatsApp.
-- `script.js`: object terjemahan `translations`, data squishy bilingual, data `media`, pilihan bahasa aktif, render kartu koleksi, carousel gambar/video, search, klik kartu untuk membuka/menutup popup detail.
+- `script.js`: object terjemahan `translations`, data squishy trilingual, data `media`, pilihan bahasa aktif, render kartu koleksi, carousel gambar/video, search, klik kartu untuk membuka/menutup popup detail.
 
 ## Catatan Perubahan Terakhir
 
@@ -123,7 +123,7 @@ Jika perubahan CSS atau gambar belum terlihat, lakukan hard refresh di browser d
 - Squishy D sampai Z masih memakai placeholder huruf karena belum ada file gambar baru.
 - Footer sudah disederhanakan menjadi "Voolatte" plus kontak WhatsApp Adam.
 - Background music sempat dicoba, tetapi dibatalkan dan kode audio sudah dihapus dari `index.html` dan `script.js`.
-- Mode bahasa Indonesia dan English sudah ditambahkan melalui tombol ID/EN di navbar.
+- Mode bahasa Indonesia, English, dan Mandarin sudah tersedia melalui tombol ID/EN/中文 di navbar.
 - Teks statis, placeholder search, empty state, aria label kartu, alt gambar, dan deskripsi squishy sudah mengikuti bahasa aktif.
 - Pilihan bahasa disimpan dengan key `voolatteLanguage` di `localStorage`.
 - Detail squishy sekarang tampil sebagai popup modal, sehingga daftar kartu koleksi tidak berubah layout saat kartu dibuka.
