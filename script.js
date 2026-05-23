@@ -336,6 +336,18 @@ function renderSquishyCards(keyword = "") {
   }
 
   squishyGrid.innerHTML = filteredSquishy.map((squishy) => `
+    ${activeDetailIndex === squishy.index ? `
+    <article class="squishy-card-detail" style="--card-color: ${squishy.color};">
+      <div class="detail-image">
+        ${createImageContent(squishy)}
+      </div>
+      <div class="detail-content">
+        <h2>${squishy.name}</h2>
+        <p>${squishy.description[currentLanguage]}</p>
+        <button class="back-button inline-detail-back" type="button" data-close-detail>${getText("backButton")}</button>
+      </div>
+    </article>
+    ` : `
     <button class="squishy-card" type="button" data-index="${squishy.index}" aria-label="${getText("cardAria")} ${squishy.name}">
       <div class="image-placeholder" style="--card-color: ${squishy.color};">
         ${createImageContent(squishy)}
@@ -344,29 +356,26 @@ function renderSquishyCards(keyword = "") {
         <h3>${squishy.name}</h3>
       </div>
     </button>
+    `}
   `).join("");
 }
 
 // Fungsi ini membuka tampilan detail saat kartu squishy diklik.
 function showSquishyDetail(index) {
-  const squishy = squishyList[index];
-  activeDetailIndex = index;
-
-  detailCard.innerHTML = `
-    <div class="detail-image" style="--card-color: ${squishy.color};">
-      ${createImageContent(squishy)}
-    </div>
-    <div class="detail-content">
-      <h2>${squishy.name}</h2>
-      <p>${squishy.description[currentLanguage]}</p>
-    </div>
-  `;
-
-  squishyDetail.classList.remove("hidden");
+  activeDetailIndex = Number(index);
+  squishyDetail.classList.add("hidden");
+  renderSquishyCards(squishySearch.value);
 }
 
 // Event klik dibuat di grid agar semua kartu yang dibuat JavaScript bisa merespons.
 squishyGrid.addEventListener("click", (event) => {
+  if (event.target.closest("[data-close-detail]")) {
+    squishyDetail.classList.add("hidden");
+    activeDetailIndex = null;
+    renderSquishyCards(squishySearch.value);
+    return;
+  }
+
   const selectedCard = event.target.closest(".squishy-card");
 
   if (!selectedCard) {

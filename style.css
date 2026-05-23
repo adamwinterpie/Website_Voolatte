@@ -379,6 +379,45 @@ h1 {
   outline-offset: 4px;
 }
 
+.squishy-card-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  background: var(--glass-strong);
+  border: 1px solid rgba(255, 214, 231, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 22px 50px rgba(154, 112, 132, 0.2);
+}
+
+.squishy-card-detail .detail-image {
+  min-height: 190px;
+  border-radius: 0;
+}
+
+.squishy-card-detail .detail-image img {
+  height: 210px;
+}
+
+.squishy-card-detail .detail-content {
+  padding: 18px;
+  text-align: center;
+}
+
+.squishy-card-detail .detail-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.45rem;
+}
+
+.squishy-card-detail .detail-content p {
+  margin-bottom: 16px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.inline-detail-back {
+  margin-top: 0;
+}
+
 .image-placeholder {
   min-height: 190px;
   display: grid;
