@@ -337,10 +337,10 @@ function createMediaContent(squishy, squishyIndex) {
   return `<div class="placeholder-shape" aria-hidden="true">${squishy.icon}</div>`;
 }
 
-function createMediaViewer(squishy, squishyIndex, className) {
+function createMediaViewer(squishy, squishyIndex, className, showControls = false) {
   const mediaList = getSquishyMedia(squishy);
   const activeIndex = getActiveMediaIndex(squishyIndex, mediaList.length);
-  const controls = mediaList.length > 1 ? `
+  const controls = showControls && mediaList.length > 1 ? `
     <div class="media-controls" aria-label="${squishy.name} media">
       <button class="media-button" type="button" data-media-action="previous" data-index="${squishyIndex}" aria-label="${getText("previousMedia")}">&lsaquo;</button>
       <span class="media-counter">${activeIndex + 1}/${mediaList.length}</span>
@@ -398,7 +398,7 @@ function renderSquishyCards(keyword = "") {
   squishyGrid.innerHTML = filteredSquishy.map((squishy) => `
     ${activeDetailIndex === squishy.index ? `
     <article class="squishy-card-detail" style="--card-color: ${squishy.color};" data-close-detail>
-      ${createMediaViewer(squishy, squishy.index, "detail-image")}
+      ${createMediaViewer(squishy, squishy.index, "detail-image", true)}
       <div class="detail-content">
         <h2>${squishy.name}</h2>
         <p>${squishy.description[currentLanguage]}</p>

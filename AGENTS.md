@@ -76,7 +76,7 @@ Jika perubahan CSS atau gambar belum terlihat, lakukan hard refresh di browser d
 - File gambar baru diletakkan di folder `images`; file video baru diletakkan di folder `videos`.
 - Properti `image` lama masih didukung sebagai fallback jika `media` belum diisi.
 - Jika `media` belum diisi, carousel sementara memakai gambar starter dari `images/squishy-a.png`, `images/squishy-b.png`, dan `images/squishy-c.png`.
-- Jika sebuah squishy memiliki lebih dari satu media, kartu dan detail inline menampilkan tombol slide sebelumnya/berikutnya.
+- Jika sebuah squishy memiliki lebih dari satu media, tombol slide sebelumnya/berikutnya hanya tampil pada detail inline setelah kartu dibuka.
 - Setiap kartu koleksi bisa diklik.
 - Setelah kartu diklik, kartu tersebut berubah menjadi detail inline di posisi kartu koleksi yang dipilih.
 - Detail inline bisa ditutup dengan mengklik kembali kartu detail tersebut.
@@ -128,5 +128,6 @@ Jika perubahan CSS atau gambar belum terlihat, lakukan hard refresh di browser d
 - Pilihan bahasa disimpan dengan key `voolatteLanguage` di `localStorage`.
 - Detail squishy sekarang tampil inline menggantikan kartu koleksi yang diklik, bukan muncul di bagian bawah website.
 - Tombol kembali pada detail inline dihapus; klik kartu detail untuk menutup detail dan kembali ke kartu koleksi.
-- Kartu koleksi dan detail inline sekarang mendukung carousel gambar/video melalui properti `media` di data squishy.
+- Kartu koleksi dan detail inline sekarang mendukung media gambar/video melalui properti `media` di data squishy.
+- Tombol slide carousel hanya tampil pada detail inline, bukan pada daftar kartu koleksi.
 - Carousel sementara otomatis memakai gambar Squishy A, B, dan C agar semua kartu bisa langsung digeser.
