@@ -11,6 +11,7 @@ const translations = {
     emptyState: "Squishy tidak ditemukan.",
     backButton: "Kembali ke Koleksi",
     cardAria: "Lihat detail",
+    closeDetailAria: "Tutup detail",
     imageAlt: "Foto"
   },
   en: {
@@ -25,6 +26,7 @@ const translations = {
     emptyState: "Squishy not found.",
     backButton: "Back to Collection",
     cardAria: "View details for",
+    closeDetailAria: "Close details for",
     imageAlt: "Photo of"
   }
 };
@@ -337,14 +339,13 @@ function renderSquishyCards(keyword = "") {
 
   squishyGrid.innerHTML = filteredSquishy.map((squishy) => `
     ${activeDetailIndex === squishy.index ? `
-    <article class="squishy-card-detail" style="--card-color: ${squishy.color};">
+    <article class="squishy-card-detail" style="--card-color: ${squishy.color};" data-close-detail role="button" tabindex="0" aria-label="${getText("closeDetailAria")} ${squishy.name}">
       <div class="detail-image">
         ${createImageContent(squishy)}
       </div>
       <div class="detail-content">
         <h2>${squishy.name}</h2>
         <p>${squishy.description[currentLanguage]}</p>
-        <button class="back-button inline-detail-back" type="button" data-close-detail>${getText("backButton")}</button>
       </div>
     </article>
     ` : `
@@ -383,6 +384,21 @@ squishyGrid.addEventListener("click", (event) => {
   }
 
   showSquishyDetail(selectedCard.dataset.index);
+});
+
+squishyGrid.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") {
+    return;
+  }
+
+  if (!event.target.closest("[data-close-detail]")) {
+    return;
+  }
+
+  event.preventDefault();
+  squishyDetail.classList.add("hidden");
+  activeDetailIndex = null;
+  renderSquishyCards(squishySearch.value);
 });
 
 backButton.addEventListener("click", () => {

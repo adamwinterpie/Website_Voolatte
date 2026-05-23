@@ -72,9 +72,10 @@ Jika perubahan CSS atau gambar belum terlihat, lakukan hard refresh di browser d
 - Squishy D sampai Z belum memiliki gambar dan memakai placeholder huruf dari data `icon` di `script.js`.
 - Setiap kartu koleksi bisa diklik.
 - Setelah kartu diklik, kartu tersebut berubah menjadi detail inline di posisi kartu koleksi yang dipilih.
+- Detail inline bisa ditutup dengan mengklik kembali kartu detail tersebut.
 - Deskripsi detail squishy tersedia dalam Bahasa Indonesia dan English.
 - Teks "Detail Squishy" sudah dihapus dari kartu detail.
-- Tombol detail bertuliskan "Kembali ke Koleksi" / "Back to Collection" dan posisinya berada di dalam detail inline.
+- Tombol "Kembali ke Koleksi" / "Back to Collection" sudah tidak ditampilkan pada detail inline.
 - Footer hanya menampilkan "Voolatte" dan kontak WhatsApp.
 - Kontak footer menampilkan "083817966224 (Adam)" dan link ke `https://wa.me/6283817966224`.
 
@@ -118,3 +119,4 @@ Jika perubahan CSS atau gambar belum terlihat, lakukan hard refresh di browser d
 - Teks statis, placeholder search, empty state, tombol detail, aria label kartu, alt gambar, dan deskripsi squishy sudah mengikuti bahasa aktif.
 - Pilihan bahasa disimpan dengan key `voolatteLanguage` di `localStorage`.
 - Detail squishy sekarang tampil inline menggantikan kartu koleksi yang diklik, bukan muncul di bagian bawah website.
+- Tombol kembali pada detail inline dihapus; klik kartu detail untuk menutup detail dan kembali ke kartu koleksi.
